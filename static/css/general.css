@@ -2,6 +2,18 @@ body{
     background-color: white;
 }
 
-.full-page{
-    height: 100%;
+.glyphicon-flag{
+    color: rgb(2, 124, 8);
+}
+
+.glyphicon-time{
+    color: rgb(1, 105, 179);
+}
+
+.glyphicon-home{
+    /*color: rgb(142, 142, 142);*/
+}
+
+.glyphicon-certificate{
+    color: rgb(224, 103, 1);
 }
