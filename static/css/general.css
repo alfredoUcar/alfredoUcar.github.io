@@ -1,0 +1,7 @@
+body{
+    background-color: rgb(245, 245, 245);
+}
+
+#presentation img{
+    border: 4px double darkgray;
+}
