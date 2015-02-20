@@ -5,3 +5,8 @@ body{
 #presentation img{
     border: 4px double darkgray;
 }
+
+#presentation{
+    margin-top: 5%;
+    margin-bottom: 50px;
+}
