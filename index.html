@@ -4,9 +4,12 @@
     <title>Alfredo Ucendo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/bootstrap-extension.css">
     <link rel="stylesheet" href="static/css/general.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="https//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
@@ -21,25 +24,36 @@
     </div>
 </div>
 
-<div id="social" class="container-fluid">
-    <a href="#" ></a>
+<div id="social" class="container-fluid text-center centered">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+        <hr>
+        <a target="_blank" href="https://instagram.com/corlobo/"><span class="icon-instagram"></span></a>
+        <a target="_blank" href="https://www.google.com/+alfredoucendoarroyo"><span class="icon-gplus"></span></a>
+        <a target="_blank" href="http://corlobo.tumblr.com/"><span class="icon-tumblr"></span></a>
+        <a target="_blank" href="https://www.facebook.com/alfredo.ucar"><span class="icon-facebook"></span></a>
+        <a target="_blank" href="https://twitter.com/CorLobo"><span class="icon-twitter"></span></a>
+        <a target="_blank" href="https://github.com/alfredoUcar"><span class="icon-github"></span></a>
+        <a target="_blank" href="https://es.linkedin.com/in/alfredoucendo"><span class="icon-linkedin"></span></a>
+        <a target="_blank" href="mailto:alfredo.ucar@gmail.com"><span class="icon-mail"></span></a>
+        <hr>
+    </div>
 </div>
 
 <div class="container-fluid">
 
     <div class="row text-center centered">
         <div class="btn-group btn-group-lg">
-            <a href="#formacion-content" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#formacion-content"><span class="glyphicon glyphicon-book"></span> Formación</a>
+            <a href="#formacion-content" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#formacion-content"><span class="icon-graduation"></span> Formación</a>
             <a href="#experiencia-content" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#experiencia-content"><span class="glyphicon glyphicon-briefcase"></span> Experiencia</a>
             <a href="#formacion-content" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#habilidades-content"><span class="glyphicon glyphicon-flash"></span> Habilidades</a>
-            <a href="#formacion-content" class="btn btn-default" role="button" data-toggle="collapse" data-target="#about-content"><span class="glyphicon glyphicon-user"></span> Sobre mi</a>
+            <a href="#about-content" class="btn btn-success" role="button" data-toggle="collapse" data-target="#about-content"><span class="glyphicon glyphicon-user"></span> Sobre mi</a>
         </div>
     </div>
+    <div id="content" class="row centered">
 
-    <div class="row centered">
-        <div id="formacion-content" class="col-md-10 col-md-offset-1 collapse">
+        <div id="formacion-content" class="collapse">
             <ul class="list-group">
-                <li class="list-group-item">
+                <li class="list-group-item col-md-4 col-md-offset-2">
                     <div>
                         <h4 class="list-group-item-heading"><strong>Estudios superiores</strong></h4>
                         <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span> Actualidad</p>
@@ -47,7 +61,7 @@
                         <p class="list-group-item-text"><span class="glyphicon glyphicon-home"></span> Universitat de les Illes Balears (UIB)</p>
                     </div>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item col-md-4">
                     <div>
                         <h4 class="list-group-item-heading"><strong>Estudios secundarios</strong></h4>
                         <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span> 2007 - 2009</p>
@@ -57,6 +71,7 @@
                 </li>
             </ul>
         </div>
+
         <div id="experiencia-content" class="col-md-10 col-md-offset-1 collapse">
             <ul class="list-group">
                 <li class="list-group-item">
@@ -73,7 +88,9 @@
                     <div>
                         <h4 class="list-group-item-heading"><strong>Automated Forex Trading</strong></h4>
                         <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span> Febrero de 2014 - Abril de 2014</p>
+                        <p class="list-group-item-text"><span class="glyphicon glyphicon-home"></span> Autónomo</p>
                         <p class="list-group-item-text"><span class="glyphicon glyphicon-tasks"></span> Desarrollo de estrategias, indicadores y automatización de procesos forex en MQL4.</p>
+
                     </div>
                 </li>
             </ul>

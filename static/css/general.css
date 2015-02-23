@@ -2,11 +2,64 @@ body{
     background-color: rgb(245, 245, 245);
 }
 
+
 #presentation img{
     border: 4px double darkgray;
 }
 
+#presentation h1{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 50px;
+}
+
+hr{
+    height: 1px;
+    margin: 0px;
+    background-image: -webkit-linear-gradient(left, transparent, #46433A, transparent);
+    background-image: -moz-linear-gradient(left, transparent, #46433A, transparent);
+    background-image: -ms-linear-gradient(left, transparent, #46433A, transparent);
+    background-image: -o-linear-gradient(left, transparent, #46433A, transparent);
+}
+
 #presentation{
     margin-top: 5%;
-    margin-bottom: 50px;
+}
+
+#social{
+    /*margin-top: 10px;*/
+    margin-bottom: 15px;
+}
+
+#social div{
+    background-image: -webkit-linear-gradient(left, transparent, white, transparent);
+    background-image: -moz-linear-gradient(left, transparent, white, transparent);
+    background-image: -ms-linear-gradient(left, transparent, white, transparent);
+    background-image: -o-linear-gradient(left, transparent, white, transparent);
+}
+
+#social a{
+    color: rgb(69, 69, 69);
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 7px;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin: 3px 2px;
+    /*border: 1px solid;*/
+}
+
+#social a:hover{
+    color: white;
+    background: rgb(69, 69, 69);
+}
+
+/*ajuste de posición*/
+.icon-github,.icon-twitter{
+    margin-left: -0.2em;
+}
+
+#content > div{
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
