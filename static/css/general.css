@@ -63,3 +63,10 @@ hr{
     margin-top: 10px;
     margin-bottom: 30px;
 }
+
+#conocimientos-content > div {
+    background: white;
+    border: 1px solid lightgray;
+    padding: 20px 0px 0px;
+    border-radius: 5px;
+}
