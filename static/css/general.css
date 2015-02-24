@@ -3,7 +3,7 @@ body{
 }
 
 
-#presentation img{
+#presentation img, #about-content img{
     border: 4px double darkgray;
 }
 
