@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e39a9da9-15b1-42ca-ae65-374916bc1e7c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/general2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/version2.html" afterPath="$PROJECT_DIR$/version2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/general2.css" afterPath="$PROJECT_DIR$/static/css/general2.css" />
     </list>
     <ignored path="webpersonal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="general2.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/general2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.024271844" vertical-offset="0" max-vertical-offset="618">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.07281554" vertical-offset="0" max-vertical-offset="618">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -765,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/general2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024271844" vertical-offset="0" max-vertical-offset="618">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.07281554" vertical-offset="0" max-vertical-offset="618">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding />
         </state>
       </provider>
