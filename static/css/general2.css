@@ -8,6 +8,11 @@ body{
     color: rgb(239, 239, 239);*/
 }
 
+.overlay{
+    background: lightgrey;
+    opacity: 0.6;
+}
+
 .cover {
   position: ab;
   top: 0%;
