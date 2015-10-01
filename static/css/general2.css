@@ -57,3 +57,20 @@ header h1{
 header h2{
     font-size: 25px;
 }
+
+.bottom-center{
+  position: absolute;
+  bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+a.round-button{
+      color: rgb(100, 100, 100);
+      background: rgba(255, 243, 204, 0.68);
+      padding: 8px;
+      border-radius: 50%;
+      font-size: smaller;
+}
