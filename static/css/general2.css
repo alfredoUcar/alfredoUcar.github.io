@@ -68,9 +68,14 @@ header h2{
 }
 
 a.round-button{
-      color: rgb(100, 100, 100);
-      background: rgba(255, 243, 204, 0.68);
-      padding: 8px;
-      border-radius: 50%;
-      font-size: smaller;
+    color: rgba(232, 232, 232, 0.47);
+    background: rgba(255, 243, 204, 0.06);
+    padding: 8px;
+    border-radius: 50%;
+    font-size: smaller;
+}
+
+a.round-button{
+    color: rgb(100, 100, 100);
+    background: rgba(255, 243, 204, 0.68);
 }
