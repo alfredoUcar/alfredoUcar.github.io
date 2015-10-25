@@ -46,7 +46,7 @@ function checkSectionsVisibility(){
         var h = $section.scrollHeight;
         var opacity = 0;
         if (diff < h){
-            opacity = diff/h;
+            opacity = 1-diff/h;
         }
         $($section).css( "opacity", opacity );
     }
