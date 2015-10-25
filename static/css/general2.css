@@ -16,6 +16,7 @@ body{
     /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
     font-family: 'Cabin Condensed', sans-serif;
     color: white;
+    background: transparent;
 }
 
 section{
