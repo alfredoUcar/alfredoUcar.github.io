@@ -48,6 +48,6 @@ function checkSectionsVisibility(){
         if (diff < h){
             opacity = diff/h;
         }
-        $section.css( "opacity", opacity );
+        $($section).css( "opacity", opacity );
     }
 }
