@@ -1,4 +1,13 @@
 html {
+
+}
+
+html {
+    background: url(../images/lago.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height:100%;
 }
 
@@ -7,8 +16,6 @@ body{
     /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
     font-family: 'Cabin Condensed', sans-serif;
     color: white;
-    background-size: cover;
-    background-position: center top;
 }
 
 section{
