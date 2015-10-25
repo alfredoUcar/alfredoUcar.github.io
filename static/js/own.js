@@ -41,9 +41,9 @@ function checkSectionsVisibility(){
     var top = $(window).scrollTop(); //reference
     for (i = 0; i < $sections.length; ++i) {
         $section = $sections[i];
-        var topSection = $section.scrollTop();
+        var topSection = $section.offsetTop;
         var diff = Math.abs(topSection-top);
-        var h = $section.innerHeight();
+        var h = $section.scrollHeight;
         var opacity = 0;
         if (diff < h){
             opacity = diff/h;
