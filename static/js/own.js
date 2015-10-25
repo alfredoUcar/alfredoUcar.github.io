@@ -7,6 +7,10 @@ $(window).resize(function() {
    dinamicResponsive();
 });
 
+$(window).scroll(function() {
+   checkSectionsVisibility();
+});
+
 function dinamicResponsive(){
     if (window.matchMedia("(min-width: 768px)").matches) {
         /* Small devices (tablets, 768px and up) */
@@ -30,4 +34,20 @@ function switchToVerticalGroupButtons(){
 function switchToHorizontalGroupButtons(){
     $btns = $(".btn-group-vertical.btn-group-responsive");
     $btns.addClass("btn-group").removeClass("btn-group-vertical");
+}
+
+function checkSectionsVisibility(){
+    $sections = $("section");
+    var top = $(window).scrollTop(); //reference
+    for (i = 0; i < $sections.length; ++i) {
+        $section = $sections[i];
+        var topSection = $section.scrollTop();
+        var diff = Math.abs(topSection-top);
+        var h = $section.innerHeight();
+        var opacity = 0;
+        if (diff < h){
+            opacity = diff/h;
+        }
+        $section.faceTo(100,opacity);
+    }
 }
