@@ -1,8 +1,8 @@
 //coordinates (x,y) of image reference for each section.
 //Coordinates are in % relative to the image
 var sectionsImageReference = {
-                                Section2:[2,15],
-                                Section3:[15,20]
+                                Section2:[10,25],
+                                Section3:[25,60]
                                 }
 
 
@@ -72,14 +72,13 @@ function canvasLayers(){
         if (canvas.length == 0) continue;
         canvas=canvas[0];
 
-        ctx.clearRect(0, 0, w, h);
-
         //set the internal size to match
         canvas.width  = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
 
         var w=canvas.offsetWidth,h=canvas.offsetHeight;
         var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, w, h);
         var id = $section.attr("id");
         var pos = sectionsImageReference[id];
         var x=pos[0]*w/100;
