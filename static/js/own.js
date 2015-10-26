@@ -69,9 +69,8 @@ function canvasLayers(){
         $section = $($sections[i]);
         var canvas = $section.find("canvas");
         if (canvas.length == 0) continue;
-        canvas=canvas[0];                       //get DOM element
-        var w=$section.scrollWidth;
-        var h=$section.scrollHeight;;
+        canvas=canvas[0];
+        var w=canvas.offsetWidth,h=offsetHeight;
         var ctx = canvas.getContext("2d");
         var id = $section.attr("id");
         var pos = sectionsImageReference[id];
