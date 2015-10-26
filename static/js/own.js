@@ -71,6 +71,9 @@ function canvasLayers(){
         var canvas = $section.children("canvas");
         if (canvas.length == 0) continue;
         canvas=canvas[0];
+
+        ctx.clearRect(0, 0, w, h);
+
         //set the internal size to match
         canvas.width  = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
@@ -81,13 +84,19 @@ function canvasLayers(){
         var pos = sectionsImageReference[id];
         var x=pos[0]*w/100;
         var y=pos[1]*h/100;
-        ctx.clearRect(0, 0, w, h);
+
+        //circle reference
         ctx.fillStyle = "white";
         ctx.beginPath();
         ctx.arc(x, y, 10, 0, 2 * Math.PI);
-        ctx.lineWidth=1;
         ctx.closePath();
         ctx.fill();
+
+        //line to icon
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+        ctx.lineTo(w/2,h/2);
+        ctx.stroke();
     }
 
 }
