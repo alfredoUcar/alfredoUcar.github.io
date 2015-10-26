@@ -74,8 +74,8 @@ function canvasLayers(){
         var ctx = canvas.getContext("2d");
         var id = $section.attr("id");
         var pos = sectionsImageReference[id];
-        var x=pos[0]*w;
-        var y=pos[1]*h;
+        var x=pos[0]*w/100;
+        var y=pos[1]*h/100;
         ctx.beginPath();
         ctx.arc(x, y, 15, 0, 2 * Math.PI);
         ctx.lineWidth=2;
