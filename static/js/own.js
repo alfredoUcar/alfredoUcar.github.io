@@ -95,6 +95,8 @@ function canvasLayers(){
         ctx.beginPath();
         ctx.moveTo(x,y);
         ctx.lineTo(w/2,h/2);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = 'white';
         ctx.stroke();
     }
 
