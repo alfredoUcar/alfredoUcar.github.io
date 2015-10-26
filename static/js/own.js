@@ -70,7 +70,8 @@ function canvasLayers(){
         var canvas = $section.find("canvas");
         if (canvas.length == 0) continue;
         canvas=canvas[0];                       //get DOM element
-        var w=canvas.innerWidth,h=innerHeight;
+        var w=$section.scrollWidth;
+        var h=$section.scrollHeight;;
         var ctx = canvas.getContext("2d");
         var id = $section.attr("id");
         var pos = sectionsImageReference[id];
