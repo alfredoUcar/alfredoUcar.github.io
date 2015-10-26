@@ -1,8 +1,8 @@
 //coordinates (x,y) of image reference for each section.
 //Coordinates are in % relative to the image
 var sectionsImageReference = {
-                                Section2:{10,15},
-                                Section3:{70,20}
+                                Section2:[10,15],
+                                Section3:[70,20]
                                 }
 
 
