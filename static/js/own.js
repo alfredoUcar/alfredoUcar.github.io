@@ -69,6 +69,7 @@ function canvasLayers(){
         $section = $($sections[i]);
         var canvas = $section.find("canvas");
         if (canvas.length == 0) continue;
+        canvas=canvas[0];                       //get DOM element
         var w=canvas.innerWidth,h=innerHeight;
         var ctx = canvas.getContext("2d");
         var id = $section.attr("id");
