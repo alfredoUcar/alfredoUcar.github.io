@@ -1,7 +1,7 @@
 //coordinates (x,y) of image reference for each section.
 //Coordinates are in % relative to the image
 var sectionsImageReference = {
-                                Section2:[10,15],
+                                Section2:[2,15],
                                 Section3:[70,20]
                                 }
 
@@ -78,7 +78,7 @@ function canvasLayers(){
         var y=pos[1]*h/100;
         ctx.beginPath();
         ctx.arc(x, y, 15, 0, 2 * Math.PI);
-        ctx.lineWidth=2;
+        ctx.lineWidth=1;
         ctx.strokeStyle="blue";
         ctx.stroke();
     }
