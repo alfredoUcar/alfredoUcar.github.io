@@ -77,11 +77,13 @@ function canvasLayers(){
         var pos = sectionsImageReference[id];
         var x=pos[0]*w/100;
         var y=pos[1]*h/100;
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = "rgba(30,144,255,0.5)";
         ctx.beginPath();
-        ctx.arc(x, y, 15, 0, 2 * Math.PI);
+        ctx.arc(x, y, 5, 0, 2 * Math.PI);
         ctx.lineWidth=1;
-        ctx.strokeStyle="blue";
-        ctx.stroke();
+        ctx.closePath();
+        ctx.fill();
     }
 
 }
