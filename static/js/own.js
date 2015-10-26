@@ -14,6 +14,7 @@ $(document).ready(function() {
 
 $(window).resize(function() {
    dinamicResponsive();
+   canvasLayers();
 });
 
 $(window).scroll(function() {
