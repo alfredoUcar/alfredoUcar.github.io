@@ -68,7 +68,7 @@ function canvasLayers(){
     $sections = $("section");
     for (i = 0; i < $sections.length; ++i) {
         $section = $($sections[i]);
-        var canvas = $section.find("canvas");
+        var canvas = $section.children("canvas");
         if (canvas.length == 0) continue;
         canvas=canvas[0];
         var w=canvas.offsetWidth,h=canvas.offsetHeight;
