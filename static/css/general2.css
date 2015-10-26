@@ -36,6 +36,14 @@ section > canvas{
     height: 100%;
 }
 
+.round-icon{
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    font-size: xx-large;
+    color: rgba(0, 0, 0, 0.62);
+}
+
 .vhcenter{
   position: absolute;
   top: 50%;
