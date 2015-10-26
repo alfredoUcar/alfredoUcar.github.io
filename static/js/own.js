@@ -71,12 +71,10 @@ function canvasLayers(){
         var canvas = $section.children("canvas");
         if (canvas.length == 0) continue;
         canvas=canvas[0];
-        // Make it visually fill the positioned parent
-        canvas.style.width ='100%';
-        canvas.style.height='100%';
-        // ...then set the internal size to match
+        //set the internal size to match
         canvas.width  = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
+
         var w=canvas.offsetWidth,h=canvas.offsetHeight;
         var ctx = canvas.getContext("2d");
         var id = $section.attr("id");
@@ -84,9 +82,9 @@ function canvasLayers(){
         var x=pos[0]*w/100;
         var y=pos[1]*h/100;
         ctx.clearRect(0, 0, w, h);
-        ctx.fillStyle = "rgba(255,255,255)";
+        ctx.fillStyle = "white";
         ctx.beginPath();
-        ctx.arc(x, y, 5, 0, 2 * Math.PI);
+        ctx.arc(x, y, 10, 0, 2 * Math.PI);
         ctx.lineWidth=1;
         ctx.closePath();
         ctx.fill();
