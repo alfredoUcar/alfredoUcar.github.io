@@ -9,12 +9,12 @@ var sectionsImageReference = {
 
 $(document).ready(function() {
    dinamicResponsive();
-   canvasLayers();
+   //canvasLayers();
 });
 
 $(window).resize(function() {
    dinamicResponsive();
-   canvasLayers();
+   //canvasLayers();
 });
 
 $(window).scroll(function() {
@@ -91,13 +91,27 @@ function canvasLayers(){
         ctx.closePath();
         ctx.fill();
 
+        var icon = $section.find(".section-icon").find("span");
+        icon = center(icon);
+
         //line to icon
         ctx.beginPath();
         ctx.moveTo(x,y);
-        ctx.lineTo(w/2,h/2);
+        ctx.lineTo(icon.x,icon.y-$section.offset().top);
         ctx.lineWidth = 2;
         ctx.strokeStyle = 'white';
         ctx.stroke();
     }
 
+}
+
+function center(e){
+    var offset = e.offset();
+    var width = e.width();
+    var height = e.height();
+
+    var centerX = offset.left + width / 2;
+    var centerY = offset.top + height / 2;
+
+    return {x:centerX, y:centerY};
 }
