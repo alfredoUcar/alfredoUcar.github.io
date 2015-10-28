@@ -90,6 +90,13 @@ body h2{
   right: 0;
 }
 
+.right{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    padding: 10px;
+}
+
 a.round-button{
     color: rgba(232, 232, 232, 0.47);
     background: rgba(255, 243, 204, 0.06);
@@ -101,4 +108,34 @@ a.round-button{
 a.round-button:hover{
     color: rgb(100, 100, 100);
     background: rgba(255, 243, 204, 0.68);
+}
+
+
+#social a{
+    background: rgb(69, 69, 69);
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 7px;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin: 3px 2px;
+    border: 1px solid;
+}
+
+#social a:hover{
+    background: white;
+    color: rgb(69, 69, 69);
+}
+
+/*ajuste de posición*/
+.icon-github,.icon-twitter{
+    margin-left: -0.2em;
+}
+
+.modal-content{
+      color: rgb(58, 58, 58);
+      border-radius: 0px;
+      box-shadow: 0 0px 18px rgb(178, 229, 255);
 }

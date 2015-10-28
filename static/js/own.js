@@ -10,6 +10,10 @@ var sectionsImageReference = {
 $(document).ready(function() {
    dinamicResponsive();
    //canvasLayers();
+   $('[data-toggle="tooltip"]').tooltip();
+   $("#contact").click(function(){
+        $("#mailModal").modal();
+    });
 });
 
 $(window).resize(function() {
