@@ -62,22 +62,23 @@
                     <form class="form-horizontal" role="form" method="post" action="//formspree.io/alfredo.ucar@gmail.com">
                         <input type="hidden" name="_subject" value="Webpage form contact" />
                         <input type="text" name="_gotcha" style="display:none" />
+                        <input type="hidden" name="_next" value="http://alfredoucar.github.io/version2" />
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Nombre</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre y Apellidos" value="">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre y Apellidos" value="" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" name="_replyto" placeholder="Tu correo electrónico" value="">
+                                <input type="email" class="form-control" id="email" name="_replyto" placeholder="Tu correo electrónico" value="" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="message" class="col-sm-2 control-label">Mensaje</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="4" id="message" name="message"></textarea>
+                                <textarea class="form-control" rows="4" id="message" name="message" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
