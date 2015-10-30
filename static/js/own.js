@@ -1,3 +1,14 @@
+// extension:
+$.fn.scrollEnd = function(callback, timeout) {
+  $(this).scroll(function(){
+    var $this = $(this);
+    if ($this.data('scrollTimeout')) {
+      clearTimeout($this.data('scrollTimeout'));
+    }
+    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  });
+};
+
 //coordinates (x,y) of image reference for each section.
 //Coordinates are in % relative to the image
 var sectionsImageReference = {
@@ -15,6 +26,10 @@ $(document).ready(function() {
         $("#mailModal").modal();
     });
 });
+
+$(window).scrollEnd(function(){
+    adjustSection();
+}, 500);
 
 $(window).resize(function() {
    dinamicResponsive();
@@ -63,6 +78,28 @@ function checkSectionsVisibility(){
             opacity = 1-diff/h;
         }
         $($section).css( "opacity", opacity );
+    }
+}
+
+function adjustSection(){
+    $sections = $("section");
+    var top = $(window).scrollTop(); //reference
+    for (i = 0; i < $sections.length; ++i) {
+        $section = $sections[i];
+        var topSection = $section.offsetTop;
+        var diff = Math.abs(topSection-top);
+        var h = $section.scrollHeight;
+        var proximity = 0;
+        if (diff < h){
+            proximity = 1-diff/h;
+        }
+        if (proximity>0.93 && proximity<1){
+            $("html, body").animate({
+               scrollTop: topSection
+             }, 400);
+             console.log("cerca");
+            break;
+        }
     }
 }
 
