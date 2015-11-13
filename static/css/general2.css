@@ -47,6 +47,10 @@ section > canvas{
     height: 100%;
 }
 
+.sqr {
+    width: 100%;
+}
+
 .round-icon{
     border-radius: 50%;
     background: rgb(255, 255, 255);

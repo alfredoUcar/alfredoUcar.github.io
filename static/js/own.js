@@ -17,7 +17,6 @@ var sectionsImageReference = {
                                 }
 
 
-
 $(document).ready(function() {
    dinamicResponsive();
    //canvasLayers();
@@ -25,6 +24,23 @@ $(document).ready(function() {
    $("#contact").click(function(){
         $("#mailModal").modal();
     });
+
+    //gráficas de habilidades
+   $( "canvas.chart" ).each(function( index ) {
+        var ctx = $(this).get(0).getContext("2d");
+        var hab = habilities[index];
+        var data = dataModel;
+        data[0].label = hab.name;
+        data[0].value = hab.value;
+        data[1].value = 100-hab.value;
+        var myDoughnutChart = new Chart(ctx).DoughnutText(data, {
+            segmentShowStroke : false,
+            percentageInnerCutout : 75,
+            showTooltips: false,
+            scaleFontSize: 15
+        });
+    });
+
 });
 
 $(window).scrollEnd(function(){
@@ -156,3 +172,36 @@ function center(e){
 
     return {x:centerX, y:centerY};
 }
+
+
+//extends doughnut chart
+Chart.types.Doughnut.extend({
+    // Passing in a name registers this chart in the Chart namespace in the same way
+    name: "DoughnutText",
+    draw: function() {
+            Chart.types.Doughnut.prototype.draw.apply(this, arguments);
+            this.chart.ctx.fillStyle = this.segments[0].fillColor;
+            this.chart.ctx.textBaseline = 'middle';
+            this.chart.ctx.textAlign="center";
+            this.chart.ctx.font=this.options.scaleFontSize+"px "+this.options.scaleFontFamily;
+            this.chart.ctx.fillText(this.segments[0].label, this.chart.width / 2, this.chart.height / 2, this.chart.width);
+        }
+});
+
+var dataModel = [
+    {
+        value: 50,
+        color:"#0098ff",
+        highlight: "#00b6ff",
+        strokeColor: "0098ff",
+        label: "Hability"
+    },
+    {
+        value: 50,
+        color: "rgba(29, 203, 21,0)",
+        highlight: "rgba(29, 203, 21,0)",
+        label: "padding"
+    }
+]
+
+var habilities = [{name:"Hab.1",value:70},{name:"Hab.2",value:45},{name:"Hab.3",value:60},{name:"Hab.4",value:80}]
