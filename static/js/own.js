@@ -47,7 +47,7 @@ $(document).ready(function() {
                 segmentShowStroke : false,
                 percentageInnerCutout : 75,
                 showTooltips: false,
-                scaleFontSize: 12
+                scaleFontSize: 10
             });
         }
     });
@@ -195,7 +195,7 @@ Chart.types.Doughnut.extend({
             this.chart.ctx.textBaseline = 'middle';
             this.chart.ctx.textAlign="center";
             this.chart.ctx.font="bold "+this.options.scaleFontSize+"px "+this.options.scaleFontFamily;
-            this.chart.ctx.fillText(this.segments[0].label, this.chart.width / 2, this.chart.height / 2, this.chart.width);
+            this.chart.ctx.fillText(this.segments[0].label, this.chart.width / 2, this.chart.height / 2, 0.73*this.chart.width);
         }
 });
 
