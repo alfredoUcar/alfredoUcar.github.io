@@ -32,6 +32,7 @@ $(document).ready(function() {
         if (hab.name == "Otros"){
             var myDoughnutChart = new Chart(ctx).DoughnutText(dataOthers, {
                 percentageInnerCutout : 75,
+                responsive: true,
                 segmentStrokeWidth : 1,
                 segmentStrokeColor : "#000",
                 segmentShowStroke : false,
@@ -45,6 +46,7 @@ $(document).ready(function() {
             data[1].value = 100-hab.value;
             var myDoughnutChart = new Chart(ctx).DoughnutText(data, {
                 segmentShowStroke : false,
+                responsive: true,
                 percentageInnerCutout : 75,
                 showTooltips: false,
                 scaleFontSize: 10

@@ -79,14 +79,37 @@ section > canvas{
   max-width: 100%;
 }
 
-body h1{
-    font-size: 85px;
+@media(max-width:600px){
+    #portada h1{
+        font-size: 14vw;
+    }
+
+    #portada h2{
+        font-size: 7vw;
+    }
+
+    #portada h3{
+        font-size: 4vw;
+    }
+}
+
+@media(min-width:601px){
+    #portada h1{
+        font-size: 85px;
+    }
+
+    #portada h2{
+        font-size: 45px;
+    }
+
+    #portada h3{
+        font-size: 25px;
+    }
+}
+#portada h1{
     margin-bottom: -10px;
 }
 
-body h2{
-    font-size: 25px;
-}
 
 .bottom-center{
   position: absolute;
@@ -145,4 +168,13 @@ a.round-button:hover{
       color: rgb(58, 58, 58);
       border-radius: 0px;
       box-shadow: 0 0px 18px rgb(178, 229, 255);
+}
+
+hr.separator{
+    height: 2px;
+    border: 0;
+    background-image: -webkit-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
+    background-image: -moz-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
+    background-image: -ms-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
+    background-image: -o-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
 }
