@@ -62,6 +62,7 @@ $(window).scrollEnd(function(){
 
 $(window).resize(function() {
    dinamicResponsive();
+   adjustSection();
    //canvasLayers();
 });
 
@@ -70,18 +71,8 @@ $(window).scroll(function() {
 });
 
 function dinamicResponsive(){
-    if (window.matchMedia("(min-width: 768px)").matches) {
-        /* Small devices (tablets, 768px and up) */
-        switchToHorizontalGroupButtons();
-    } else if (window.matchMedia("(min-width: 992px)").matches){
-        /* Medium devices (desktops, 992px and up) */
-        switchToHorizontalGroupButtons();
-    } else if (window.matchMedia("(min-width: 1200px)").matches){
-        /* Large devices (large desktops, 1200px and up) */
-        switchToHorizontalGroupButtons();
-    }else{/* Extra small devices (phones, less than 768px) */
-        switchToVerticalGroupButtons();
-    }
+    adjustSectionBody();
+//    adjustChartSize();
 }
 
 function switchToVerticalGroupButtons(){
@@ -130,6 +121,31 @@ function adjustSection(){
             break;
         }
     }
+}
+
+function adjustSectionBody(){
+    $(".section-header").each(function(index,sh){
+        var h = $(sh).outerHeight(true);
+        var ph = $(sh).parent().outerHeight();
+        $(sh).siblings(".section-body").outerHeight(ph-h);
+    });
+}
+
+function adjustChartSize(){
+    var charts = $("canvas.chart");
+    var parent = charts.parent();
+    var h = parent.outerHeight(true);
+    var w = parent.outerWidth(true);
+    var size = 50;
+    if (w > h){
+        size=h/3;
+    }else{
+        size=w/3;
+    }
+    charts.each(function(index,chart){
+        $(chart).outerHeight(size);
+        $(chart).outerWidth(size);
+    });
 }
 
 function canvasLayers(){

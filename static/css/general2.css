@@ -30,9 +30,9 @@ section li{
     white-space: normal;
 }
 
-.section-icon{
-    margin-top: 30px;
-    margin-bottom: 30px;
+.section-header{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .overlay{
