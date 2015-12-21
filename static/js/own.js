@@ -1,13 +1,3 @@
-// extension:
-$.fn.scrollEnd = function(callback, timeout) {
-  $(this).scroll(function(){
-    var $this = $(this);
-    if ($this.data('scrollTimeout')) {
-      clearTimeout($this.data('scrollTimeout'));
-    }
-    $this.data('scrollTimeout', setTimeout(callback,timeout));
-  });
-};
 
 //coordinates (x,y) of image reference for each section.
 //Coordinates are in % relative to the image
@@ -56,23 +46,28 @@ $(document).ready(function() {
 
 });
 
-$(window).scrollEnd(function(){
-    adjustSection();
-}, 500);
-
 $(window).resize(function() {
    dinamicResponsive();
    adjustSection();
    //canvasLayers();
 });
 
-$(window).scroll(function() {
+$(window).scroll(function(e) {
    checkSectionsVisibility();
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+       // downscroll code
+      navToSection(true);
+   } else {
+      // upscroll code
+      navToSection(false);
+   }
+   lastScrollTop = st;
 });
 
 function dinamicResponsive(){
     adjustSectionBody();
-//    adjustChartSize();
+    adjustChartSize();
 }
 
 function switchToVerticalGroupButtons(){
@@ -85,23 +80,27 @@ function switchToHorizontalGroupButtons(){
     $btns.addClass("btn-group").removeClass("btn-group-vertical");
 }
 
+//set sections opacity proporcionaly to visibility on window
 function checkSectionsVisibility(){
     $sections = $("section");
-    var top = $(window).scrollTop(); //reference
+    var top = $(window).scrollTop(); //reference: window top
     for (i = 0; i < $sections.length; ++i) {
         $section = $sections[i];
         var topSection = $section.offsetTop;
-        var diff = Math.abs(topSection-top);
+        var distance = Math.abs(topSection-top);
         var h = $section.scrollHeight;
         var opacity = 0;
-        if (diff < h){
-            opacity = 1-diff/h;
+        if (distance < h){ // section partially visible on window
+            opacity = 1-distance/h;
         }
         $($section).css( "opacity", opacity );
     }
 }
 
+var adjusting = false;
+//adjust to nearest section
 function adjustSection(){
+    adjusting = true;
     $sections = $("section");
     var top = $(window).scrollTop(); //reference
     for (i = 0; i < $sections.length; ++i) {
@@ -113,14 +112,15 @@ function adjustSection(){
         if (diff < h){
             proximity = 1-diff/h;
         }
-        if (proximity>0.93 && proximity<1){
-            $("html, body").animate({
-               scrollTop: topSection
-             }, 400);
-             console.log("cerca");
+        if (proximity>0.5 && proximity<1){//  proximity>50% (nearest section)
+            // $("html, body").animate({
+            //    scrollTop: topSection
+            //  }, 400);
+             $("html, body").css("scrollTop",topSection);
             break;
         }
     }
+    adjusting = false;
 }
 
 function adjustSectionBody(){
@@ -132,7 +132,7 @@ function adjustSectionBody(){
 }
 
 function adjustChartSize(){
-    var charts = $("canvas.chart");
+    var charts = $(".graphic");
     var parent = charts.parent();
     var h = parent.outerHeight(true);
     var w = parent.outerWidth(true);
@@ -143,8 +143,9 @@ function adjustChartSize(){
         size=w/3;
     }
     charts.each(function(index,chart){
-        $(chart).outerHeight(size);
-        $(chart).outerWidth(size);
+//        $(chart).outerHeight(size);
+//        $(chart).outerWidth(size);
+        $(chart).css({"width":size,"height":size});
     });
 }
 

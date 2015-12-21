@@ -1,6 +1,6 @@
 
 html {
-    background: url(../images/lago.jpg);
+    background: url(../images/cuarto.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -33,6 +33,10 @@ section li{
 .section-header{
     margin-top: 15px;
     margin-bottom: 15px;
+}
+.section-body{
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .overlay{
@@ -177,4 +181,11 @@ hr.separator{
     background-image: -moz-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
     background-image: -ms-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
     background-image: -o-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
+}
+
+.graphic{
+    /*width:40px;
+    height:40px;*/
+    display: inline-block;
+    margin:auto;
 }
