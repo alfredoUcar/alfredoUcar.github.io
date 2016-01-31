@@ -14,35 +14,8 @@ $(document).ready(function() {
    $("#contact").click(function(){
         $("#mailModal").modal();
     });
-
-    //gráficas de habilidades
-   $( "canvas.chart" ).each(function( index ) {
-        var ctx = $(this).get(0).getContext("2d");
-        var hab = habilities[index];
-        if (hab.name == "Otros"){
-            var myDoughnutChart = new Chart(ctx).DoughnutText(dataOthers, {
-                percentageInnerCutout : 75,
-                responsive: true,
-                segmentStrokeWidth : 1,
-                segmentStrokeColor : "#000",
-                segmentShowStroke : false,
-                tooltipTemplate: "<%if (label){%><%=label%> <%}%>",
-                scaleFontSize: 12
-            });
-        }else{
-            var data = dataModel;
-            data[0].label = hab.name;
-            data[0].value = hab.value;
-            data[1].value = 100-hab.value;
-            var myDoughnutChart = new Chart(ctx).DoughnutText(data, {
-                segmentShowStroke : false,
-                responsive: true,
-                percentageInnerCutout : 75,
-                showTooltips: false,
-                scaleFontSize: 10
-            });
-        }
-    });
+    document.onkeydown = keydown;
+    //loadSkillsCharts();
 
 });
 
@@ -65,6 +38,52 @@ $(window).scroll(function(e) {
    lastScrollTop = st;
 });
 
+var charts=[];
+function loadSkillsCharts(){
+    //gráficas de habilidades
+   $( "canvas.chart" ).each(function( index ) {
+        var ctx = $(this).get(0).getContext("2d");
+        var hab = habilities[index];
+        if (hab.name == "Otros"){
+            var myDoughnutChart = new Chart(ctx).DoughnutText(dataOthers, {
+                percentageInnerCutout : 75,
+                responsive: true,
+                segmentStrokeWidth : 1,
+                segmentStrokeColor : "#000",
+                segmentShowStroke : false,
+                tooltipTemplate: "<%if (label){%><%=label%> <%}%>",
+                scaleFontSize: 12
+            });
+            charts.push(myDoughnutChart);
+        }else{
+            var data = dataModel;
+            data[0].label = hab.name;
+            data[0].value = hab.value;
+            data[1].value = 100-hab.value;
+            var myDoughnutChart = new Chart(ctx).DoughnutText(data, {
+                segmentShowStroke : false,
+                responsive: true,
+                percentageInnerCutout : 75,
+                showTooltips: false,
+                scaleFontSize: 10
+            });
+            charts.push(myDoughnutChart);
+        }
+    });
+};
+
+function destroySkillsCharts(){
+    for (var i = 0; i < charts.length; i++) {
+        charts[i].destroy();
+    }
+}
+
+function resizeSkillsCharts(){
+    for (var i = 0; i < charts.length; i++) {
+        charts[i].resize();
+    }
+}
+
 function dinamicResponsive(){
     adjustSectionBody();
     adjustChartSize();
@@ -80,49 +99,6 @@ function switchToHorizontalGroupButtons(){
     $btns.addClass("btn-group").removeClass("btn-group-vertical");
 }
 
-//set sections opacity proporcionaly to visibility on window
-function checkSectionsVisibility(){
-    $sections = $("section");
-    var top = $(window).scrollTop(); //reference: window top
-    for (i = 0; i < $sections.length; ++i) {
-        $section = $sections[i];
-        var topSection = $section.offsetTop;
-        var distance = Math.abs(topSection-top);
-        var h = $section.scrollHeight;
-        var opacity = 0;
-        if (distance < h){ // section partially visible on window
-            opacity = 1-distance/h;
-        }
-        $($section).css( "opacity", opacity );
-    }
-}
-
-var adjusting = false;
-//adjust to nearest section
-function adjustSection(){
-    adjusting = true;
-    $sections = $("section");
-    var top = $(window).scrollTop(); //reference
-    for (i = 0; i < $sections.length; ++i) {
-        $section = $sections[i];
-        var topSection = $section.offsetTop;
-        var diff = Math.abs(topSection-top);
-        var h = $section.scrollHeight;
-        var proximity = 0;
-        if (diff < h){
-            proximity = 1-diff/h;
-        }
-        if (proximity>0.5 && proximity<1){//  proximity>50% (nearest section)
-            // $("html, body").animate({
-            //    scrollTop: topSection
-            //  }, 400);
-             $("html, body").css("scrollTop",topSection);
-            break;
-        }
-    }
-    adjusting = false;
-}
-
 function adjustSectionBody(){
     $(".section-header").each(function(index,sh){
         var h = $(sh).outerHeight(true);
@@ -132,8 +108,8 @@ function adjustSectionBody(){
 }
 
 function adjustChartSize(){
-    var charts = $(".graphic");
-    var parent = charts.parent();
+    var chartsContainers = $(".graphic");
+    var parent = chartsContainers.parent();
     var h = parent.outerHeight(true);
     var w = parent.outerWidth(true);
     var size = 50;
@@ -142,11 +118,12 @@ function adjustChartSize(){
     }else{
         size=w/3;
     }
-    charts.each(function(index,chart){
+    chartsContainers.each(function(index,chart){
 //        $(chart).outerHeight(size);
 //        $(chart).outerWidth(size);
         $(chart).css({"width":size,"height":size});
     });
+    //resizeSkillsCharts();
 }
 
 function canvasLayers(){

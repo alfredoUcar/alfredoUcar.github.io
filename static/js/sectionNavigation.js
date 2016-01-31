@@ -14,6 +14,50 @@ $(window).scrollEnd(function(){
     navigatingBetweenSections=false;
 }, 200);
 
+//set sections opacity proporcionaly to visibility on window
+function checkSectionsVisibility(){
+    $sections = $("section");
+    var top = $(window).scrollTop(); //reference: window top
+    for (i = 0; i < $sections.length; ++i) {
+        $section = $sections[i];
+        var topSection = $section.offsetTop;
+        var distance = Math.abs(topSection-top);
+        var h = $section.scrollHeight;
+        var opacity = 0;
+        if (distance < h){ // section partially visible on window
+            opacity = 1-distance/h;
+            if ($section.id=="habilidades" && distance==0) loadSkillsCharts();
+        }
+        $($section).css( "opacity", opacity );
+    }
+}
+
+var adjusting = false;
+//adjust to nearest section
+function adjustSection(){
+    adjusting = true;
+    $sections = $("section");
+    var top = $(window).scrollTop(); //reference
+    for (i = 0; i < $sections.length; ++i) {
+        $section = $sections[i];
+        var topSection = $section.offsetTop;
+        var diff = Math.abs(topSection-top);
+        var h = $section.scrollHeight;
+        var proximity = 0;
+        if (diff < h){
+            proximity = 1-diff/h;
+        }
+        if (proximity>0.5 && proximity<1){//  proximity>50% (nearest section)
+            // $("html, body").animate({
+            //    scrollTop: topSection
+            //  }, 400);
+             $("html, body").css("scrollTop",topSection);
+            break;
+        }
+    }
+    adjusting = false;
+}
+
 var navigatingBetweenSections = false;
 //navigate to next/prev section
 function navToSection(next){
@@ -44,6 +88,7 @@ function navToSection(next){
                scrollTop: dest
            }, 800,function () {
                //adjustSection();
+               if ($section.id=="habilidades") destroySkillsCharts();
                enableScroll();
            });
             break;
