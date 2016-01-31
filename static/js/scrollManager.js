@@ -13,9 +13,12 @@ function preventDefault(e) {
 
 function preventDefaultForScrollKeys(e) {
     if (keys[e.keyCode]) {
-        console.log("prevent for key", e.keyCode)
-        preventDefault(e);
-        return false;
+        if ( e.keyCode == 32  && (e.target.type != 'text' && e.target.type != 'textarea')){
+            // si pulsa 'espacio' y no está escribiendo...
+            console.log("prevent for key", e.keyCode)
+            preventDefault(e);
+            return false;
+        }
     }
 }
 

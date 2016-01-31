@@ -12,7 +12,11 @@ $(document).ready(function() {
    //canvasLayers();
    $('[data-toggle="tooltip"]').tooltip();
    $("#contact").click(function(){
+        disableScroll();        // deshabilita el scroll para que no se cierre el formulario
         $("#mailModal").modal();
+    });
+    $("#mailModal").on('hidden.bs.modal', function () {
+            enableScroll();     // vuelve a habilitar el scroll una vez cerrado el formulario
     });
     document.onkeydown = keydown;
     //loadSkillsCharts();
