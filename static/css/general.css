@@ -1,44 +1,153 @@
+
+html {
+    background: url(../images/cuarto.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
 body{
-    background-color: rgb(245, 245, 245);
+    min-height:100%;
+    /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+    font-family: 'Cabin Condensed', sans-serif;
+    color: white;
+    background: transparent;
 }
 
-
-#presentation img, #about-content img{
-    border: 4px double darkgray;
+section{
+    position: relative;
+    height: 100vh;
+    font-size: large;
+    min-height: 350px;
 }
 
-#presentation h1{
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 50px;
+section li{
+    white-space: normal;
 }
 
-hr{
-    height: 1px;
-    margin: 0px;
-    background-image: -webkit-linear-gradient(left, transparent, #46433A, transparent);
-    background-image: -moz-linear-gradient(left, transparent, #46433A, transparent);
-    background-image: -ms-linear-gradient(left, transparent, #46433A, transparent);
-    background-image: -o-linear-gradient(left, transparent, #46433A, transparent);
-}
-
-#presentation{
-    margin-top: 5%;
-}
-
-#social{
-    /*margin-top: 10px;*/
+.section-header{
+    margin-top: 15px;
     margin-bottom: 15px;
 }
-
-#social div{
-    background-image: -webkit-linear-gradient(left, transparent, white, transparent);
-    background-image: -moz-linear-gradient(left, transparent, white, transparent);
-    background-image: -ms-linear-gradient(left, transparent, white, transparent);
-    background-image: -o-linear-gradient(left, transparent, white, transparent);
+.section-body{
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
+.overlay{
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+section > canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sqr {
+    width: 100%;
+}
+
+.round-icon{
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    font-size: xx-large;
+    color: rgba(0, 0, 0, 0.62);
+}
+
+.vhcenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+}
+
+.cover {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+.cover img {
+  margin: auto;
+  max-width: 100%;
+}
+
+@media(max-width:600px){
+    #portada h1{
+        font-size: 14vw;
+    }
+
+    #portada h2{
+        font-size: 7vw;
+    }
+
+    #portada h3{
+        font-size: 4vw;
+    }
+}
+
+@media(min-width:601px){
+    #portada h1{
+        font-size: 85px;
+    }
+
+    #portada h2{
+        font-size: 45px;
+    }
+
+    #portada h3{
+        font-size: 25px;
+    }
+}
+#portada h1{
+    margin-bottom: -10px;
+}
+
+
+.bottom-center{
+  position: absolute;
+  bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.right{
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    padding: 10px;
+}
+
+a.round-button{
+    color: rgba(232, 232, 232, 0.47);
+    background: rgba(255, 243, 204, 0.06);
+    padding: 8px;
+    border-radius: 50%;
+    font-size: smaller;
+}
+
+a.round-button:hover{
+    color: rgb(100, 100, 100);
+    background: rgba(255, 243, 204, 0.68);
+}
+
+
 #social a{
-    color: rgb(69, 69, 69);
+    background: rgb(69, 69, 69);
+    color: white;
     font-size: 18px;
     border-radius: 50%;
     padding: 7px;
@@ -46,40 +155,37 @@ hr{
     width: 40px;
     display: inline-block;
     margin: 3px 2px;
-    /*border: 1px solid;*/
+    border: 1px solid;
 }
 
 #social a:hover{
-    color: white;
-    background: rgb(69, 69, 69);
+    background: white;
+    color: rgb(69, 69, 69);
 }
 
 /*ajuste de posición*/
-.icon-github,.icon-twitter{
-    margin-left: -0.2em;
+.icon-github,.icon-tumblr{
+    margin-left: -0.1em;
 }
 
-#content{
-    margin-top: 20px;
-    margin-bottom: 50px;
+.modal-content{
+      color: rgb(58, 58, 58);
+      border-radius: 0px;
+      box-shadow: 0 0px 18px rgb(178, 229, 255);
 }
 
-#conocimientos-content > div, #about-content > div {
-    background: white;
-    border: 1px solid lightgray;
-    padding: 20px 20px 0px;
-    border-radius: 5px;
+hr.separator{
+    height: 2px;
+    border: 0;
+    background-image: -webkit-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
+    background-image: -moz-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
+    background-image: -ms-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
+    background-image: -o-linear-gradient(left, transparent 35%, white 50%, transparent 65%);
 }
 
-.label.label-icon{
-    display: inherit;
-    background: rgb(244, 242, 242);
-    color: rgb(165, 165, 165);
-    float: right;
-    font-size: large;
-}
-
-.label-icon.glyphicon{
-    padding: 7px 16px;
-    font-size: inherit;
+.graphic{
+    /*width:40px;
+    height:40px;*/
+    display: inline-block;
+    margin:auto;
 }

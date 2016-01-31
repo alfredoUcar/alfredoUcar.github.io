@@ -1,173 +1,213 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html>
+<head lang="en">
     <title>Alfredo Ucendo</title>
     <meta charset="utf-8">
     <meta name="description" content="Personal website">
     <meta name="author" content="Alfredo Ucendo Arroyo">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/bootstrap-extension.css">
-    <link rel="stylesheet" href="static/css/general.css">
+    <link rel="stylesheet" href="static/css/general2.css">
     <link rel="stylesheet" href="css/fontello.css">
     <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="https//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:400,600' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/Chart.min.js"></script>
     <script src="static/js/own.js"></script>
+    <script src="static/js/sectionNavigation.js"></script>
+    <script src="static/js/scrollManager.js"></script>
 </head>
 <body>
+<header>
 
+</header>
 
-<div id="presentation" class="container text-center">
-    <div class="col-md-12">
-        <img src="static/images/perfil.jpg" class="img-circle img-responsive center-block" alt="foto de perfil" width="200" height="200">
-        <h1><stroke>Alfredo Ucendo Arroyo</stroke></h1>
-    </div>
-</div>
+<main id="resume">
+    <section id="portada">
+        <div class="overlay container">
+            <div class="text-center vhcenter">
+                <h1>Alfredo Ucendo</h1>
+                <h3>Programador - Desarrollador web</h3>
+            </div>
 
-<div id="social" class="container-fluid text-center centered">
-    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-        <hr>
-        <a target="_blank" href="https://instagram.com/corlobo/"><span class="icon-instagram"></span></a>
-        <a target="_blank" href="https://www.google.com/+alfredoucendoarroyo"><span class="icon-gplus"></span></a>
-        <a target="_blank" href="http://corlobo.tumblr.com/"><span class="icon-tumblr"></span></a>
-        <a target="_blank" href="https://www.facebook.com/alfredo.ucar"><span class="icon-facebook"></span></a>
-        <a target="_blank" href="https://twitter.com/CorLobo"><span class="icon-twitter"></span></a>
-        <a target="_blank" href="https://github.com/alfredoUcar"><span class="icon-github"></span></a>
-        <a target="_blank" href="https://es.linkedin.com/in/alfredoucendo"><span class="icon-linkedin"></span></a>
-        <a href="mailto:alfredo.ucar@gmail.com"><span class="icon-mail"></span></a>
-        <hr>
-    </div>
-</div>
+            <div id="social" class="container-fluid text-center bottom-center">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                    <!--<hr>-->
+                    <!--<a target="_blank" href="https://instagram.com/corlobo/"><span class="icon-instagram"></span></a>-->
+                    <!--<a target="_blank" href="https://www.google.com/+alfredoucendoarroyo"><span class="icon-gplus"></span></a>-->
+                    <a target="_blank" data-toggle="tooltip" title="Tumblr" href="http://corlobo.tumblr.com/"><span class="icon-tumblr"></span></a>
+                    <!--<a target="_blank" href="https://www.facebook.com/alfredo.ucar"><span class="icon-facebook"></span></a>-->
+                    <!--<a target="_blank" href="https://twitter.com/CorLobo"><span class="icon-twitter"></span></a>-->
+                    <a target="_blank" data-toggle="tooltip" title="Github" href="https://github.com/alfredoUcar"><span class="icon-github"></span></a>
+                    <a target="_blank" data-toggle="tooltip" title="Linkedin" href="https://es.linkedin.com/in/alfredoucendo"><span class="icon-linkedin"></span></a>
+                    <a id="contact" data-toggle="tooltip" title="Contáctame" data-target="#mailModal" href="#"><span class="icon-mail"></span></a>
+                    <!--<hr>-->
+                </div>
+            </div>
 
-<div class="container-fluid">
+            <!-- Modal -->
+            <div id="mailModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
 
-    <div class="row text-center centered">
-        <div class="btn-group btn-group-responsive btn-group-lg">
-            <a href="#formacion-content" class="btn btn-primary" role="button" data-toggle="collapse" >
-                <span class="icon-graduation"></span> Formación
-            </a>
-            <a href="#trabajo-content" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#trabajo-content">
-                <span class="glyphicon glyphicon-briefcase"></span> Trabajo
-            </a>
-            <a href="#conocimientos-content" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#conocimientos-content">
-                <span class="glyphicon glyphicon-flash"></span> Conocimientos
-            </a>
-            <a href="#about-content" class="btn btn-success" role="button" data-toggle="collapse" data-target="#about-content">
-                <span class="glyphicon glyphicon-user"></span> Sobre mi
-            </a>
-        </div>
-    </div>
-    <div id="content" class="row centered">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Contáctame</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form class="form-horizontal" role="form" method="post" action="//formspree.io/alfredo.ucar@gmail.com">
+                        <input type="hidden" name="_subject" value="Webpage form contact" />
+                        <input type="text" name="_gotcha" style="display:none" />
+                        <input type="hidden" name="_next" value="http://alfredoucar.github.io/version2" />
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Nombre</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre y Apellidos" value="" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" name="_replyto" placeholder="Tu correo electrónico" value="" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="col-sm-2 control-label">Mensaje</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="4" id="message" name="message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar <span class="glyphicon glyphicon-send"></span></button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <! Will be used to display an alert to the user>
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+                </div>
 
-        <div id="formacion-content" class="collapse">
-            <ul class="list-group">
-                <li class="list-group-item col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
-                    <div>
-                        <span class="label label-icon icon-graduation"></span>
-                        <h4 class="list-group-item-heading"><strong>Estudios superiores</strong></h4>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span> Actualidad</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-flag"></span> Grado de Ingeniería informática</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-home"></span> Universitat de les Illes Balears (UIB)</p>
-                    </div>
-                </li>
-                <li class="list-group-item col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-5 col-md-offset-0">
-                    <div>
-                        <span class="label label-icon icon-graduation"></span>
-                        <h4 class="list-group-item-heading"><strong>Estudios secundarios</strong></h4>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span> 2007 - 2009</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-flag"></span> Bachillerato Científico-Tecnológico</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-home"></span> Instituto IES Madina Mayurqa</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div id="trabajo-content" class="collapse">
-            <ul class="list-group">
-                <li class="list-group-item col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                    <div>
-                        <span class="label label-icon glyphicon glyphicon-briefcase"></span>
-                        <h4 class="list-group-item-heading"><strong>Desarrollador Web</strong></h4>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span> Agosto de 2013 - Enero de 2014</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-home"></span> Mola Factory S.L (<a href="http://www.mola.com/">mola.com</a>)</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-tasks"></span> Mantenimiento y desarrollo del sitio web mola.fm</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-certificate"></span><stroke> Talentum Startups Long Track <small>Telefónica S.A.</small></stroke></p>
-                        <p class="list-group-item-text">Beca para estudiantes y jóvenes emprendedores del sector de las TIC en el que se participa durante 6 meses en alguno de los proyectos de las Startups asociadas.</p>
-                    </div>
-                </li>
-                <li class="list-group-item col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                    <div>
-                        <span class="label label-icon glyphicon glyphicon-briefcase"></span>
-                        <h4 class="list-group-item-heading"><strong>Automated Forex Trading</strong></h4>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-time"></span> Febrero de 2014 - Abril de 2014</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-home"></span> Autónomo</p>
-                        <p class="list-group-item-text"><span class="glyphicon glyphicon-tasks"></span> Desarrollo de estrategias, indicadores y automatización de procesos forex en MQL4.</p>
-
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div id="conocimientos-content" class="collapse">
-            <div class="row col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                <span class="label label-icon glyphicon glyphicon-flash"></span>
-                <dl class="dl-horizontal">
-                    <dt>Lenguajes</dt>
-                    <dd>PHP(Zend), Python(Django), Java, C, MQL4</dd>
-                    <dt>Diseño web</dt>
-                    <dd>HTML5, CSS3, JavaScript, JQuery, AJAX, Bootstrap</dd>
-                    <dt>Bases de datos</dt>
-                    <dd>MySQL, PostgreSQL</dd>
-                    <dt>Control de versiones</dt>
-                    <dd>Git, TFS</dd>
-                    <dt>SO</dt>
-                    <dd>Linux, Windows</dd>
-                </dl>
+              </div>
             </div>
         </div>
-
-        <div id="about-content" class="collapse">
-            <div class="row col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                <span class="label label-icon glyphicon glyphicon-user"></span>
-                <div class="row">
-                    <div class="col-md-2 col-sm-2 col-xs-3">
-                        <img src="static/images/perfil.jpg" class="img-circle" alt="foto de perfil" width="75" height="75">
-                    </div>
-                    <div class="col-md-8 col-sm-8 col-xs-7">
+    </section>
+    <section id="estudios">
+        <canvas></canvas>
+        <div class="overlay container text-center">
+            <div class="col-xs-12 section-header">
+                <span class="round-icon glyphicon glyphicon-education"></span>
+                <h2>Estudios</h2>
+            </div>
+            <div class="col-xs-12 section-body">
+                <div class="col-xs-12 vhcenter">
+                    <div class="col-md-offset-1 col-md-5">
                         <ul class="list-unstyled">
-                            <li>
-                                <a href="https://www.google.es/maps/place/Mallorca,+Islas+Baleares/@39.613498,2.911652,10z/data=!3m1!4b1!4m2!3m1!1s0x1297b8766606c129:0xb7eb9bff02d2ecc0"><span class="glyphicon glyphicon-map-marker"></span> Mallorca</a>
-                            </li>
-                            <li>
-                                <a href="mailto:alfredo.ucar@gmail.com"><span class="glyphicon glyphicon-envelope"></span> alfredo.ucar@gmail.com</a>
-                            </li>
-                            <li>
-                                <a href="http://alfredoucar.github.io/"><span class="glyphicon glyphicon-link"></span> http://alfredoucar.github.io/</a>
-                            </li>
+                            <li><strong>2009</strong></li>
+                            <li>Bachillerato Científico-Tecnológico</li>
+                            <li>Instituto IES Madina Mayurqa</li>
+                        </ul>
+                    </div>
+                    <hr class="separator visible-xs visible-sm">
+                    <div class="col-md-5">
+                        <ul class="list-unstyled">
+                            <li><strong>Cursando</strong></li>
+                            <li>Grado de Ingeniería informática</li>
+                            <li>Universitat de les Illes Balears (UIB)</li>
                         </ul>
                     </div>
                 </div>
-                <div class="row col-md-8 col-md-offset-1">
-                    <p></p>
+            </div>
+        </div>
+    </section>
+     <section id="experiencia">
+        <canvas></canvas>
+        <div class="overlay container text-center">
+            <div class="col-xs-12 section-header">
+                <span class="round-icon glyphicon glyphicon-road"></span>
+                <h2>Experiencia</h2>
+            </div>
+            <div class="col-xs-12 section-body">
+                <div class="col-xs-12 vhcenter">
+                    <div class="col-md-offset-1 col-md-5">
+                        <ul class="list-unstyled">
+                            <li><strong>Agosto 2013 - Enero 2014</strong></li>
+                            <li>Desarrollador web</li>
+                            <li>Mola Factory S.L</li>
+                            <li>Becado por Telefónica con la beca Talentum Startups Long Track.</li>
+                        </ul>
+                    </div>
+                    <hr class="separator visible-xs visible-sm">
+                    <div class="col-md-5">
+                        <ul class="list-unstyled">
+                            <li><strong>Febrero de 2014 - Abril de 2014</strong></li>
+                            <li>Automated Forex Trading</li>
+                            <li>Desarrollo de estrategias, indicadores y automatización de procesos forex en MQL4.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+    <section id="habilidades">
+        <canvas></canvas>
+        <div class="overlay container text-center">
+            <div class="col-xs-12 section-header">
+                <span class="round-icon glyphicon glyphicon-console"></span>
+                <h2>Habilidades</h2>
+            </div>
+            <div class="col-xs-12 section-body">
+                <!--<div class="col-xs-10 vhcenter">-->
+                    <!--<div class="col-xs-4 col-md-offset-2 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-offset-2 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class=" chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                    <!--<div class="col-xs-4 col-md-offset-5 col-md-2">-->
+                    <div class="graphic">
+                        <canvas class="sqr chart" width="50" height="50"></canvas>
+                    </div>
+                <!--</div>-->
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
 
-    </div>
-</div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-29112629-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
+</footer>
 </body>
 </html>
