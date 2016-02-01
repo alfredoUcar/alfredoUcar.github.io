@@ -271,11 +271,11 @@ var dataOthers = [
 var habilities = [
     {name:"PHP",value:70},
     {name:"Python",value:60},
-    {name:"Java",value:78},
-    {name:"HTML5",value:87},
-    {name:"CSS3",value:82},
-    {name:"JavaScript",value:85},
-    {name:"Git",value:70},
-    {name:"PostgreSQL",value:60},
+    {name:"Java",value:60},
+    {name:"HTML5",value:75},
+    {name:"CSS3",value:75},
+    {name:"JavaScript",value:78},
+    {name:"Git",value:65},
+    {name:"PostgreSQL",value:55},
     {name:"Otros",value:100},
     ]
